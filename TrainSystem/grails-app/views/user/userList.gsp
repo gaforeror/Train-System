@@ -45,8 +45,10 @@
 				id="userList" style="margin-left: 10%; margin-top:5%; min-width: 700px;">
 				<tr>
 					<th>Nombre</th>
+                                        <th>Apellidos</th>
 					<th>Email</th>
 					<th>Contraseña encriptada</th>
+                                        
 				</tr>
 				<script>
 					loadUsers()

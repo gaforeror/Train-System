@@ -9,8 +9,10 @@ function loadUsers(){
 				$('#userList')
 						.append(
 								'<tr><td>'
-										+ data[i].name
+										+ data[i].firstname
 										+ '</td><td>'
+                                                                                + data[i].lastname
+                                                                                + '</td><td>'
 										+ data[i].email
 										+ '</td><td>'
 										+ data[i].passwordHash

@@ -32,12 +32,12 @@ class UserController {
 			
 			def user = (User)session["user"]
 			render( view: "userList", model : [ username :
-				user.name.toUpperCase() ] )
+				user.firstname.toUpperCase() ] )
 		}
 	}
 
 	def loadUsers(){
-		render User.listOrderByName() as JSON
+		render User.listOrderByFirstname() as JSON
 	}
 
 	def logIn(){
@@ -68,9 +68,10 @@ class UserController {
 
 			// Create user
 			user = new User(
-					name: params.name,
+					firstname: params.firstname,
 					passwordHash: new String(Base64.encodeBase64(params.password.getBytes())),
-					email:params.mail
+					email:params.mail,
+                                        lastname:params.lastname
 					)
 
 			user.save(flush:true)

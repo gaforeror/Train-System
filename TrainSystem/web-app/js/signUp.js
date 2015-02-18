@@ -1,11 +1,14 @@
 function signUp(){
-	var name = document.getElementById('inputName').value
+	var firstname = document.getElementById('inputFirstname').value
+        var lastname = document.getElementById('inputLastname').value
 	var mail = document.getElementById('inputEmail').value
 	var password = document.getElementById('inputPassword').value
+        
 	jQuery.ajax({
 		type : 'POST',
 		data : {
-			"name" : name,
+			"firstname" : firstname,
+                        "lastname" : lastname,
 			"mail" : mail,
 			"password" : password,
 		},

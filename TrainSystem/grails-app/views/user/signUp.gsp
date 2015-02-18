@@ -39,6 +39,7 @@
 .panel-default {
 	opacity: 0.85;
 	margin-top: 5%;
+        background-color: black;
 }
 
 .form-group.last {
@@ -56,7 +57,7 @@
 				<div class="col-md-4 col-md-offset-4">
 					<div class="panel panel-default" style="border-radius: 2em;">
 						<div class="panel-heading"
-							style="border-top-left-radius: 2em; border-top-right-radius: 2em;">
+							style="border-top-left-radius: 2em; border-top-right- background-color: blacradius: 2em;">
 							<strong class="">REGISTRO</strong>
 						</div>
 						<div class="panel-body">
@@ -64,13 +65,21 @@
 								<div class="form-group">
 
 									<div class="col-sm-9">
-										<input type="text" class="form-control" id="inputName"
+										<input type="text" class="form-control" id="inputFirstname"
 											placeholder="NOMBRE" required
 											style="border-radius: 0; border-top-left-radius: 2em; height: 50px; margin-top: 0px"
 											oninvalid="setCustomValidity('Este campo es obligatorio ')"
 											maxlength="50" size="50"
 											onkeydown="try{setCustomValidity('')}catch(e){}"
-											onkeyUp="try{setCustomValidity('')}catch(e){}"> <input
+											onkeyUp="try{setCustomValidity('')}catch(e){}"> 
+                                                                                        <input type="text" class="form-control" id="inputLastname"
+											placeholder="APELLIDOS" required
+											style="border-radius: 0; height: 50px; margin-top: 0px"
+											oninvalid="setCustomValidity('Este campo es obligatorio ')"
+											maxlength="50" size="50"
+											onkeydown="try{setCustomValidity('')}catch(e){}"
+											onkeyUp="try{setCustomValidity('')}catch(e){}">
+                                                                                        <input
 											type="email" class="form-control" id="inputEmail"
 											placeholder="CORREO ELECTRÓNICO" required=""
 											style="border-radius: 0; height: 50px; margin-top: 0px"
@@ -100,8 +109,8 @@
 
 
 								<div style="margin-right: 30%;">
-									<div class="captcha_wrap">
-										<div class="captcha">Arrastre para ordenar</div>
+									<div class="captcha_wrap" style="background-color: black" >
+										<div class="captcha" style="background-color: black">Arrastre para ordenar</div>
 										<ul id="sortable"
 											onmouseup='document.getElementById("alertCaptcha").style.display = "none"'>
 											<li class="captchaItem">1</li>
@@ -195,9 +204,9 @@
 			}
 		});
 
-		$("#inputName").keypress(function(e) {
+		$("#inputFirstname").keypress(function(e) {
 
-			if ($("#inputName").val().length > 0)
+			if ($("#inputFirstname").val().length > 0)
 				return e.keyCode
 			else
 				return e.keyCode != 32

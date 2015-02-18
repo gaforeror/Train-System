@@ -26,8 +26,9 @@
 </head>
 <style type="text/css">
 .panel-default {
-	opacity: 0.85;
+	opacity: 0.90;
 	margin-top: 10%;
+        background-color: black;
 }
 
 .form-group.last {
