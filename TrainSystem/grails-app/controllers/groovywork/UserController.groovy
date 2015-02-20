@@ -63,12 +63,12 @@ class UserController {
 			render "Usuario ya existe"
 		}
 		else {
-
+                        print(User.sha256(params.password))
 
 			// Create user
 			user = new User(
 					firstname: params.firstname,
-					passwordHash: new String(Base64.encodeBase64(params.password.getBytes())),
+					passwordHash: User.sha256(params.password),
 					email:params.mail,
                                         lastname:params.lastname,
                                         role: new String("undefined"),
@@ -90,8 +90,7 @@ class UserController {
 
 	boolean checkPassword( password, mail) {
 		def passwordHash = User.findByEmail(mail).passwordHash
-		def realPass = new String(Base64.decodeBase64(passwordHash.toString().getBytes()))
-		return password.equals(realPass)
+		return passwordHash.equals(User.sha256(password))
 	}
 
 
