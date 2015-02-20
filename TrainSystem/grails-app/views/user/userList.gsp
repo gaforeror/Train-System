@@ -40,14 +40,19 @@
 <g:render template='navBar' />
 
 <body class="withBack">
-<h1 style ="color:rgb(245,245,245); margin-left:11%"><b>LISTA DE USUARIOS</b></h1>
+<h1 style ="color:rgb(0,0,0); margin-left:11%"><b>LISTA DE USUARIOS</b></h1>
 	<table class="table-bordered table-striped table-hover "
 				id="userList" style="margin-left: 10%; margin-top:5%; min-width: 700px;">
 				<tr>
+                                        <th>id</th>
 					<th>Nombre</th>
                                         <th>Apellidos</th>
 					<th>Email</th>
 					<th>Contraseña encriptada</th>
+                                        <th>Fecha de nacimiento</th>
+                                        <th>Tipo de documento</th>
+                                        <th>Numero de documento</th>
+                                        <th>Rol</th>
                                         
 				</tr>
 				<script>

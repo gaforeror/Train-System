@@ -37,7 +37,7 @@ class UserController {
 	}
 
 	def loadUsers(){
-		render User.listOrderByFirstname() as JSON
+		render User.listOrderById() as JSON
 	}
 
 	def logIn(){
@@ -71,7 +71,8 @@ class UserController {
 					passwordHash: new String(Base64.encodeBase64(params.password.getBytes())),
 					email:params.mail,
                                         lastname:params.lastname,
-                                        role: new String("Undefined")
+                                        role: new String("undefined"),
+                                        documentNumber: new String("undefined")
 					)
 
 			user.save(flush:true)
