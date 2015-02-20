@@ -57,8 +57,7 @@ class UserController {
 		}
 	}
 
-	def signUp(){
-
+	def signUp(){                
 		def user = User.findByEmail(params.mail)
 		if (user) {
 			render "Usuario ya existe"
@@ -71,7 +70,8 @@ class UserController {
 					firstname: params.firstname,
 					passwordHash: new String(Base64.encodeBase64(params.password.getBytes())),
 					email:params.mail,
-                                        lastname:params.lastname
+                                        lastname:params.lastname,
+                                        role: new String("Undefined")
 					)
 
 			user.save(flush:true)

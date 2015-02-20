@@ -15,7 +15,7 @@ function loadUsers(){
                                                                                 + '</td><td>'
 										+ data[i].email
 										+ '</td><td>'
-										+ data[i].passwordHash
+										+ data[i].id
 										+'</td></tr>');
 
 			}

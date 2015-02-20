@@ -78,7 +78,7 @@
 											oninvalid="setCustomValidity('Este campo es obligatorio ')"
 											maxlength="50" size="50"
 											onkeydown="try{setCustomValidity('')}catch(e){}"
-											onkeyUp="try{setCustomValidity('')}catch(e){}">
+											onkeyUp="try{setCustomValidity('')}catch(e){}">                                                                                        
                                                                                         <input
 											type="email" class="form-control" id="inputEmail"
 											placeholder="CORREO ELECTRÓNICO" required=""
