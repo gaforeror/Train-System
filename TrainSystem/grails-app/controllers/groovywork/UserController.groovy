@@ -32,12 +32,12 @@ class UserController {
 			
 			def user = (User)session["user"]
 			render( view: "userList", model : [ username :
-				user.name.toUpperCase() ] )
+				user.firstname.toUpperCase() ] )
 		}
 	}
 
 	def loadUsers(){
-		render User.listOrderByName() as JSON
+		render User.listOrderById() as JSON
 	}
 
 	def logIn(){
@@ -57,20 +57,22 @@ class UserController {
 		}
 	}
 
-	def signUp(){
-
+	def signUp(){                
 		def user = User.findByEmail(params.mail)
 		if (user) {
 			render "Usuario ya existe"
 		}
 		else {
-
+                        print(User.sha256(params.password))
 
 			// Create user
 			user = new User(
-					name: params.name,
-					passwordHash: new String(Base64.encodeBase64(params.password.getBytes())),
-					email:params.mail
+					firstname: params.firstname,
+					passwordHash: User.sha256(params.password),
+					email:params.mail,
+                                        lastname:params.lastname,
+                                        role: new String("undefined"),
+                                        documentNumber: new String("undefined")
 					)
 
 			user.save(flush:true)
@@ -88,8 +90,7 @@ class UserController {
 
 	boolean checkPassword( password, mail) {
 		def passwordHash = User.findByEmail(mail).passwordHash
-		def realPass = new String(Base64.decodeBase64(passwordHash.toString().getBytes()))
-		return password.equals(realPass)
+		return passwordHash.equals(User.sha256(password))
 	}
 
 
