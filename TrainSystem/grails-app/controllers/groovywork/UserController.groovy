@@ -83,11 +83,23 @@ class UserController {
 		def passwordHash = User.findByEmail(mail).passwordHash
 		return passwordHash.equals(User.sha256(password))
 	}
+        
+    	def renderUserList(){
 
-
-
-
+		if(!session["user"]){
+			redirect(action:"renderLogin")
+		}
+		else{
+			
+			def user = (User)session["user"]
+			render( view: "userList", model : [ username :
+				user.firstname.toUpperCase() ] )
+		}
+	}
 
 	def index() {
+	}
+        
+    	def userList() {
 	}
 }
