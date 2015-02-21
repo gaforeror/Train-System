@@ -24,16 +24,8 @@ class UserController {
 			redirect(action:"renderIndex")
 	}
 	def renderIndex(){
-
-		if(!session["user"]){
-			redirect(action:"renderLogin")
-		}
-		else{
-			
-			def user = (User)session["user"]
-			render( view: "userList", model : [ username :
-				user.firstname.toUpperCase() ] )
-		}
+		render( view: "index")
+		
 	}
 
 	def loadUsers(){
@@ -62,8 +54,7 @@ class UserController {
 		if (user) {
 			render "Usuario ya existe"
 		}
-		else {
-                        print(User.sha256(params.password))
+		else {              
 
 			// Create user
 			user = new User(
