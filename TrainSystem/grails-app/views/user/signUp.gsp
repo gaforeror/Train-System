@@ -89,10 +89,10 @@
 											onkeyup="setCustomValidity(modificarMensajeEmail())">
 
 										<input type="password" class="form-control" id="inputPassword"
-											placeholder="CONTRASEÑA" required
-											oninvalid="setCustomValidity('La contraseña es obligatoria ')"
-											onkeydown="try{setCustomValidity('')}catch(e){}"
-											onkeyUp="try{setCustomValidity('')}catch(e){}" maxlength="50"
+											placeholder="CONTRASEÑA" required=""
+											oninvalid="setCustomValidity(modificarMensajePassword())"
+											onkeydown="setCustomValidity(modificarMensajePassword())"
+											onkeyUp="setCustomValidity(modificarMensajePassword())"
 											size="50"
 											style="border-radius: 0; height: 50px; margin-top: 0px">
 
@@ -128,7 +128,8 @@
 									números</div>
 								<div id="alertEmail" class="span120 alert alert-danger"
 									style="color: red; display: none">Ya existe un usuario asociado al correo electrónico, prueba con otro.</div>
-								<div class="form-group last">
+								
+                                                                <div class="form-group last">
 									<button id="submit" type="submit"
 										class="btn btn-success btn-sm">REGISTRARSE &raquo;</button>
 									<button id="cleanButton" type="reset" class="btn btn-default btn-sm">LIMPIAR</button>

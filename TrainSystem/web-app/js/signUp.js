@@ -49,5 +49,20 @@ function modificarMensajePasswordConfirm() {
         return 'Las contraseñas no coinciden'
 }
 
+function modificarMensajePassword() {
+	var pass =  document.getElementById('inputPassword');
+	if (pass.value == '') {
+            return 'La contraseña es obligatoria' 
+        }
+        else if (pass.value.length < 7){
+         return 'La contraseña no puede tener menos de 7 caracteres'
+        }
+        else if (pass.value.length > 15){
+         return 'La contraseña no puede tener más de 15 caracteres'
+        }
+    
+       return '';
+}
+
 
 

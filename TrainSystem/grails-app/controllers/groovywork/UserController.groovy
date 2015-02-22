@@ -54,8 +54,7 @@ class UserController {
 		if (user) {
 			render "Usuario ya existe"
 		}
-		else {              
-
+		else {
 			// Create user
 			user = new User(
 					firstname: params.firstname,
